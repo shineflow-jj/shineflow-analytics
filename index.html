@@ -3,12 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shineflow Amazon Seller Analytics | SP-API-Enabled Analytics for Amazon Selling Partners</title>
-  <meta name="description" content="Shineflow provides SP-API-enabled analytics and managed marketplace services for authorized Amazon Selling Partners, including Brand Analytics insights, sales performance reporting, and strategic recommendations." />
+
+  <!-- ── PRIMARY SEO ──────────────────────────────── -->
+  <title>Shineflow Amazon Seller Analytics | Data-Driven Amazon Account Management</title>
+  <meta name="description" content="Shineflow is a data-driven Amazon account management service run by Amazon experts. We turn Amazon SP-API data into reports and dashboards, then deliver analysis and actionable insights to authorized Amazon Selling Partners." />
+  <meta name="keywords" content="Amazon account management, Amazon analytics, SP-API, Amazon Selling Partner, Amazon agency, Amazon dashboard, Amazon reporting, Brand Analytics, Amazon consulting Seattle" />
+  <meta name="author" content="Shineflow" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#101010" />
+  <link rel="canonical" href="https://analytics.shineflowseattle.com/" />
+
+  <!-- ── OPEN GRAPH ───────────────────────────────── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Shineflow Amazon Seller Analytics" />
+  <meta property="og:title" content="Shineflow Amazon Seller Analytics | Data-Driven Amazon Account Management" />
+  <meta property="og:description" content="Data-driven Amazon account management by Amazon experts. SP-API-powered reports & dashboards, plus expert analysis and actionable insights for Amazon Selling Partners." />
+  <meta property="og:url" content="https://analytics.shineflowseattle.com/" />
+  <meta property="og:image" content="https://analytics.shineflowseattle.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Shineflow Amazon Seller Analytics" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- ── TWITTER ──────────────────────────────────── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Shineflow Amazon Seller Analytics | Data-Driven Amazon Account Management" />
+  <meta name="twitter:description" content="Data-driven Amazon account management by Amazon experts. SP-API-powered reports & dashboards, plus expert analysis and actionable insights." />
+  <meta name="twitter:image" content="https://analytics.shineflowseattle.com/og-image.png" />
+
+  <!-- ── FAVICON ──────────────────────────────────── -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -39,6 +69,7 @@
       --t-fast: 200ms cubic-bezier(.2,.8,.2,1);
     }
 
+    html { scroll-behavior: smooth; }
     html, body {
       background: var(--ink);
       color: var(--cream);
@@ -47,6 +78,7 @@
       text-rendering: optimizeLegibility;
       overflow-x: hidden;
     }
+    section[id], div[id] { scroll-margin-top: 80px; }
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
     button { font-family: inherit; cursor: pointer; }
@@ -171,12 +203,25 @@
       border-bottom-color: var(--line);
     }
     .logo-text {
-      font-size: 18px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
+      font-family: 'Sora', system-ui, sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
       color: var(--cream);
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
+      padding-left: 2px;
     }
-    .logo-text span { color: var(--accent); }
+    .logo-text .logo-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent-glow);
+      margin-left: 4px;
+      align-self: flex-start;
+      margin-top: 2px;
+    }
     .nav { display: flex; gap: 28px; font-size: 14px; }
     .nav a { color: rgba(246,242,235,.65); transition: color var(--t-fast); }
     .nav a:hover { color: var(--cream); }
@@ -595,8 +640,17 @@
       gap: 16px;
       margin-bottom: 24px;
     }
-    .footer-logo { font-size: 15px; font-weight: 800; letter-spacing: -0.02em; }
-    .footer-logo span { color: var(--accent); }
+    .footer-logo {
+      font-family: 'Sora', system-ui, sans-serif;
+      font-size: 16px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      display: inline-flex; align-items: flex-start; line-height: 1;
+    }
+    .footer-logo .logo-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--accent); margin-left: 4px; margin-top: 1px;
+      box-shadow: 0 0 8px var(--accent-glow);
+    }
     .footer-links { display: flex; gap: 24px; }
     .footer-links a { font-size: 13px; color: var(--muted-dark); transition: color var(--t-fast); }
     .footer-links a:hover { color: var(--cream); }
@@ -610,12 +664,92 @@
       line-height: 1.75;
     }
 
+    /* ── DASHBOARD SHOWCASE ────────────────────────── */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .dash {
+      background: #0d0d0d;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 30px 80px -40px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.02) inset;
+      transition: transform var(--t-fast), border-color var(--t-fast);
+    }
+    .dash:hover { transform: translateY(-3px); border-color: rgba(255,122,26,.35); }
+    .dash.span-2 { grid-column: 1 / -1; }
+    .dash-bar {
+      display: flex; align-items: center; gap: 14px;
+      padding: 12px 16px;
+      background: var(--ink-2);
+      border-bottom: 1px solid var(--line);
+    }
+    .dash-dots { display: flex; gap: 6px; flex-shrink: 0; }
+    .dash-dots i { width: 10px; height: 10px; border-radius: 50%; background: rgba(246,242,235,.18); }
+    .dash-dots i:nth-child(1) { background: #ff5f56; }
+    .dash-dots i:nth-child(2) { background: #ffbd2e; }
+    .dash-dots i:nth-child(3) { background: #27c93f; }
+    .dash-url {
+      font-size: 12px; color: var(--muted-dark);
+      background: rgba(246,242,235,.05);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 14px;
+      flex: 1;
+      max-width: 320px;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .dash-tag {
+      font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--accent-2); font-weight: 600; margin-left: auto; flex-shrink: 0;
+    }
+    .dash-body { padding: 24px; }
+    .dash-title { font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 2px; }
+    .dash-sub { font-size: 12px; color: var(--muted-dark); margin-bottom: 20px; }
+
+    .kpi-row {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 22px;
+    }
+    .kpi {
+      background: rgba(246,242,235,.04);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+    }
+    .kpi .k-label { font-size: 11px; color: var(--muted-dark); letter-spacing: .04em; text-transform: uppercase; margin-bottom: 7px; }
+    .kpi .k-value { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; color: var(--cream); line-height: 1; }
+    .kpi .k-delta { font-size: 11px; font-weight: 600; margin-top: 6px; }
+    .kpi .k-delta.up { color: #4ade80; }
+    .kpi .k-delta.down { color: #f87171; }
+
+    .dash-svg { width: 100%; height: auto; display: block; }
+    .dash-legend { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 16px; }
+    .dash-legend span { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; color: rgba(246,242,235,.6); }
+    .dash-legend span i { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+
+    .insight-list { display: flex; flex-direction: column; gap: 12px; }
+    .insight {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: rgba(246,242,235,.04);
+      border: 1px solid var(--line);
+      border-left: 2px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+    }
+    .insight .i-ico { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .insight .i-text { font-size: 13px; line-height: 1.55; color: rgba(246,242,235,.78); }
+    .insight .i-text b { color: var(--cream); font-weight: 700; }
+
     /* ── RESPONSIVE ────────────────────────────────── */
     @media (max-width: 960px) {
       .overview-grid,
       .features-grid,
       .pricing-grid,
       .data-grid,
+      .showcase-grid,
       .contact-grid { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .reporting-list { grid-template-columns: repeat(3, 1fr); }
@@ -628,6 +762,10 @@
       .reporting-list { grid-template-columns: repeat(2, 1fr); }
       .stats-grid { grid-template-columns: 1fr; }
       .contact-form-wrap { padding: 24px 20px; }
+      .kpi-row { grid-template-columns: repeat(2, 1fr); }
+      .dash-body { padding: 18px; }
+      .dash-url { display: none; }
+      .stat-num { font-size: 26px; }
     }
   </style>
 </head>
@@ -635,12 +773,12 @@
 
 <!-- ── HEADER ────────────────────────────────────── -->
 <header class="header" id="header">
-  <a href="https://www.shineflowseattle.com/" class="logo-text">Shine<span>flow</span></a>
+  <a href="#top" class="logo-text" aria-label="Shineflow">Shineflow<span class="logo-dot"></span></a>
   <nav class="nav">
-    <a href="https://www.shineflowseattle.com/case-study">Case Study</a>
-    <a href="https://www.shineflowseattle.com/3pl-service">3PL Service</a>
-    <a href="https://www.shineflowseattle.com/company">Company</a>
-    <a href="https://www.shineflowseattle.com/webinar">Webinar</a>
+    <a href="#dashboards">Dashboards</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
   </nav>
   <div class="header-right">
     <a href="#contact" class="btn btn-primary" style="padding:10px 20px; font-size:14px;">Request a Quote</a>
@@ -648,14 +786,14 @@
 </header>
 
 <!-- ── HERO ──────────────────────────────────────── -->
-<section class="hero">
+<section class="hero" id="top">
   <div class="hero-content">
-    <div class="hero-badge"><span class="dot"></span> Amazon SP-API · Public Solution Provider</div>
-    <h1 class="h-display">Shineflow Amazon<br/>Seller Analytics</h1>
-    <p class="hero-sub">SP-API-enabled analytics and marketplace management services for authorized Amazon Selling Partners. Understand performance, identify growth opportunities, and make data-driven decisions.</p>
+    <div class="hero-badge"><span class="dot"></span> Run by Amazon Experts · Data &amp; Insights</div>
+    <h1 class="h-display">Data-Driven Amazon<br/>Account Management</h1>
+    <p class="hero-sub">Shineflow is a managed Amazon service run by experienced Amazon operators. We turn your Amazon SP-API data into clear reports and dashboards, then deliver the analysis and actionable insights that grow your business.</p>
     <div class="hero-ctas">
       <a href="#contact" class="btn btn-primary">Request a Quote</a>
-      <a href="#services" class="btn btn-ghost">View Services</a>
+      <a href="#dashboards" class="btn btn-ghost">See Sample Dashboards</a>
     </div>
     <div class="hero-divider"></div>
   </div>
@@ -665,8 +803,8 @@
 <div class="stats-bar">
   <div class="stats-grid">
     <div class="stat-item">
-      <div class="stat-num"><span>3</span> SP-API Services</div>
-      <div class="stat-label">Brand Analytics · Catalog · Operations</div>
+      <div class="stat-num">Amazon<span> Experts</span></div>
+      <div class="stat-label">Hands-on operators, not just software</div>
     </div>
     <div class="stat-item">
       <div class="stat-num">Authorized<span>-Only</span></div>
@@ -684,12 +822,12 @@
   <div class="container">
     <div class="section-head">
       <div class="eyebrow"><span class="dot"></span> Service Overview</div>
-      <h2 class="h-section" style="color:var(--cream); background:none; -webkit-background-clip:unset; background-clip:unset;">Marketplace Analytics &amp;<br/>Management for Amazon Sellers</h2>
+      <h2 class="h-section" style="color:var(--cream); background:none; -webkit-background-clip:unset; background-clip:unset;">Amazon Account Management,<br/>Backed by Real Data</h2>
     </div>
     <div class="overview-grid">
       <div>
-        <p class="body-lg" style="margin-bottom:20px;">Shineflow Amazon Seller Analytics is a software-supported analytics and managed marketplace service for Amazon Selling Partners. Our service helps authorized Amazon sellers and vendors understand marketplace performance, identify growth opportunities, and make data-driven decisions using data accessed through Amazon Selling Partner API (SP-API), where applicable and authorized.</p>
-        <p class="body">Shineflow only accesses Amazon Selling Partner data after the Selling Partner authorizes Shineflow's application or service. Data access and reporting features depend on the Selling Partner's eligibility, authorization, and the applicable SP-API roles approved by Amazon.</p>
+        <p class="body-lg" style="margin-bottom:20px;">Shineflow is a data-driven Amazon account management service run by experienced Amazon operators. We connect to your Amazon data through the Selling Partner API (SP-API), build the reports and dashboards that matter for your business, and pair them with the analysis and recommendations our team delivers as your operating partner.</p>
+        <p class="body">More than software, Shineflow acts as a hands-on extension of your team — monitoring performance, spotting risks and opportunities early, and translating data into the next action. Shineflow only accesses Selling Partner data after you authorize our service, and reporting depends on your eligibility, authorization, and the SP-API roles approved by Amazon.</p>
       </div>
       <div class="overview-note">
         <p><strong>Authorization-first approach.</strong> Shineflow does not access any Selling Partner account data without explicit authorization from the Selling Partner. All analytics, reports, and recommendations are delivered exclusively to the Selling Partner that authorized access to the relevant account data.</p>
@@ -698,8 +836,166 @@
   </div>
 </section>
 
+<!-- ── DASHBOARD SHOWCASE ──────────────────────────── -->
+<section class="section section-dark" id="dashboards">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot"></span> Sample Reports &amp; Dashboards</div>
+      <h2 class="h-section" style="color:var(--cream); background:none; -webkit-background-clip:unset; background-clip:unset;">See What Your Amazon Data<br/>Looks Like With Shineflow</h2>
+      <p class="body-lg">Illustrative examples of the dashboards and reports we build from your Amazon SP-API data — product sales trends, inventory health, and the insights our team layers on top. Sample data shown for demonstration.</p>
+    </div>
+
+    <div class="showcase-grid">
+
+      <!-- Featured: Product sales trend -->
+      <div class="dash span-2">
+        <div class="dash-bar">
+          <span class="dash-dots"><i></i><i></i><i></i></span>
+          <span class="dash-url">analytics.shineflowseattle.com / sales-performance</span>
+          <span class="dash-tag">Sales Performance</span>
+        </div>
+        <div class="dash-body">
+          <div class="dash-title">Product Sales Trend — Last 12 Months</div>
+          <div class="dash-sub">Revenue, units, and traffic by ASIN · United States marketplace</div>
+
+          <div class="kpi-row">
+            <div class="kpi"><div class="k-label">Revenue</div><div class="k-value">$284,920</div><div class="k-delta up">▲ 18.4% YoY</div></div>
+            <div class="kpi"><div class="k-label">Units Sold</div><div class="k-value">12,480</div><div class="k-delta up">▲ 9.2% YoY</div></div>
+            <div class="kpi"><div class="k-label">Sessions</div><div class="k-value">96,540</div><div class="k-delta up">▲ 12.1% YoY</div></div>
+            <div class="kpi"><div class="k-label">ACOS</div><div class="k-value">14.2%</div><div class="k-delta up">▼ 2.3 pts</div></div>
+          </div>
+
+          <svg class="dash-svg" viewBox="0 0 760 270" role="img" aria-label="Line chart of product sales trend over twelve months">
+            <defs>
+              <linearGradient id="areaA" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ff7a1a" stop-opacity="0.32"/>
+                <stop offset="100%" stop-color="#ff7a1a" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <!-- gridlines -->
+            <g stroke="rgba(246,242,235,0.08)" stroke-width="1">
+              <line x1="60" y1="20"  x2="740" y2="20"/>
+              <line x1="60" y1="70"  x2="740" y2="70"/>
+              <line x1="60" y1="120" x2="740" y2="120"/>
+              <line x1="60" y1="170" x2="740" y2="170"/>
+              <line x1="60" y1="220" x2="740" y2="220"/>
+            </g>
+            <!-- y labels -->
+            <g fill="rgba(246,242,235,0.4)" font-size="11" font-family="Pretendard, sans-serif" text-anchor="end">
+              <text x="50" y="24">$40k</text>
+              <text x="50" y="74">$30k</text>
+              <text x="50" y="124">$20k</text>
+              <text x="50" y="174">$10k</text>
+              <text x="50" y="224">$0</text>
+            </g>
+            <!-- area + line: Product A -->
+            <polygon points="70,150 130,140 190,120 250,125 310,100 370,90 430,95 490,75 550,70 610,60 670,55 730,45 730,220 70,220" fill="url(#areaA)"/>
+            <polyline points="70,150 130,140 190,120 250,125 310,100 370,90 430,95 490,75 550,70 610,60 670,55 730,45" fill="none" stroke="#ff7a1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Product B -->
+            <polyline points="70,180 130,175 190,180 250,160 310,165 370,150 430,155 490,140 550,150 610,135 670,130 730,125" fill="none" stroke="#7db0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Product C -->
+            <polyline points="70,200 130,195 190,190 250,185 310,188 370,175 430,170 490,172 550,160 610,165 670,158 730,150" fill="none" stroke="#9a9690" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- x labels -->
+            <g fill="rgba(246,242,235,0.4)" font-size="11" font-family="Pretendard, sans-serif" text-anchor="middle">
+              <text x="70"  y="244">Jan</text>
+              <text x="190" y="244">Apr</text>
+              <text x="370" y="244">Jul</text>
+              <text x="550" y="244">Oct</text>
+              <text x="730" y="244">Dec</text>
+            </g>
+          </svg>
+          <div class="dash-legend">
+            <span><i style="background:#ff7a1a"></i> Hero ASIN</span>
+            <span><i style="background:#7db0ff"></i> Core catalog</span>
+            <span><i style="background:#9a9690"></i> New launches</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inventory trend -->
+      <div class="dash">
+        <div class="dash-bar">
+          <span class="dash-dots"><i></i><i></i><i></i></span>
+          <span class="dash-tag">Inventory Health</span>
+        </div>
+        <div class="dash-body">
+          <div class="dash-title">Inventory Trend &amp; Reorder Risk</div>
+          <div class="dash-sub">Units on hand vs. reorder point · weekly</div>
+          <svg class="dash-svg" viewBox="0 0 360 210" role="img" aria-label="Bar chart of inventory units on hand with reorder threshold">
+            <!-- gridlines -->
+            <g stroke="rgba(246,242,235,0.08)" stroke-width="1">
+              <line x1="36" y1="20"  x2="350" y2="20"/>
+              <line x1="36" y1="70"  x2="350" y2="70"/>
+              <line x1="36" y1="120" x2="350" y2="120"/>
+              <line x1="36" y1="180" x2="350" y2="180"/>
+            </g>
+            <!-- bars (top y; taller = more stock) -->
+            <g>
+              <rect x="44"  y="45"  width="20" height="135" rx="3" fill="#3a6ea5"/>
+              <rect x="74"  y="55"  width="20" height="125" rx="3" fill="#3a6ea5"/>
+              <rect x="104" y="52"  width="20" height="128" rx="3" fill="#3a6ea5"/>
+              <rect x="134" y="70"  width="20" height="110" rx="3" fill="#3a6ea5"/>
+              <rect x="164" y="78"  width="20" height="102" rx="3" fill="#3a6ea5"/>
+              <rect x="194" y="90"  width="20" height="90"  rx="3" fill="#3a6ea5"/>
+              <rect x="224" y="100" width="20" height="80"  rx="3" fill="#5a7fb0"/>
+              <rect x="254" y="118" width="20" height="62"  rx="3" fill="#ff9a4d"/>
+              <rect x="284" y="135" width="20" height="45"  rx="3" fill="#ff7a1a"/>
+              <rect x="314" y="150" width="20" height="30"  rx="3" fill="#ff7a1a"/>
+            </g>
+            <!-- reorder threshold -->
+            <line x1="36" y1="122" x2="350" y2="122" stroke="#ff5f56" stroke-width="1.5" stroke-dasharray="6 4"/>
+            <text x="350" y="116" fill="#ff8a82" font-size="10" font-family="Pretendard, sans-serif" text-anchor="end">Reorder point</text>
+            <!-- x labels -->
+            <g fill="rgba(246,242,235,0.4)" font-size="10" font-family="Pretendard, sans-serif" text-anchor="middle">
+              <text x="54"  y="198">W1</text>
+              <text x="144" y="198">W4</text>
+              <text x="234" y="198">W7</text>
+              <text x="324" y="198">W10</text>
+            </g>
+          </svg>
+          <div class="dash-legend">
+            <span><i style="background:#3a6ea5"></i> Healthy stock</span>
+            <span><i style="background:#ff7a1a"></i> Reorder now</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Insights -->
+      <div class="dash">
+        <div class="dash-bar">
+          <span class="dash-dots"><i></i><i></i><i></i></span>
+          <span class="dash-tag">Insights &amp; Actions</span>
+        </div>
+        <div class="dash-body">
+          <div class="dash-title">What Our Team Recommends</div>
+          <div class="dash-sub">Analysis layered on top of your data · this week</div>
+          <div class="insight-list">
+            <div class="insight">
+              <span class="i-ico">📈</span>
+              <span class="i-text"><b>Hero ASIN up 18% YoY.</b> Demand is accelerating — increase ad budget on top converting keywords before Q4 competition peaks.</span>
+            </div>
+            <div class="insight">
+              <span class="i-ico">⚠️</span>
+              <span class="i-text"><b>2 SKUs below reorder point.</b> Projected stockout in ~12 days. Submit a replenishment shipment this week to protect the Buy Box.</span>
+            </div>
+            <div class="insight">
+              <span class="i-ico">🔑</span>
+              <span class="i-text"><b>3 high-intent keywords untapped.</b> Search-term data shows demand your listings don't yet rank for — a content and PPC opportunity.</span>
+            </div>
+            <div class="insight">
+              <span class="i-ico">💰</span>
+              <span class="i-text"><b>ACOS improved 2.3 pts.</b> Reallocating spend from broad to exact match is working — scale the winning campaigns.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ── BRAND ANALYTICS ────────────────────────────── -->
-<section class="section section-dark" id="brand-analytics">
+<section class="section" id="brand-analytics">
   <div class="container">
     <div class="section-head">
       <div class="eyebrow"><span class="dot"></span> Brand Analytics</div>
@@ -940,9 +1236,10 @@
         <div class="contact-rows">
           <div class="contact-row"><span class="lbl">Company</span><span class="val">Shineflow</span></div>
           <div class="contact-row"><span class="lbl">Service</span><span class="val">Shineflow Amazon Seller Analytics</span></div>
+          <div class="contact-row"><span class="lbl">Address</span><span class="val">600 1st Ave Ste 102<br/>Seattle, WA 98104</span></div>
           <div class="contact-row"><span class="lbl">Email</span><span class="val"><a href="mailto:info@shineflowseattle.com">info@shineflowseattle.com</a></span></div>
           <div class="contact-row"><span class="lbl">Website</span><span class="val"><a href="https://www.shineflowseattle.com">shineflowseattle.com</a></span></div>
-          <div class="contact-row"><span class="lbl">Privacy</span><span class="val"><a href="/privacy-policy">Privacy Policy</a></span></div>
+          <div class="contact-row"><span class="lbl">Privacy</span><span class="val"><a href="https://www.shineflowseattle.com/privacy-policy">Privacy Policy</a></span></div>
         </div>
         <p class="body">Shineflow works with authorized Amazon Selling Partners to provide analytics, reporting, and marketplace management services. Contact us to learn how we can support your Amazon business.</p>
       </div>
@@ -976,7 +1273,7 @@
             <textarea id="message" name="message" placeholder="Tell us about your Amazon business — marketplaces, ASIN count, key goals..."></textarea>
           </div>
           <button type="submit" class="form-submit">Send Inquiry →</button>
-          <p class="form-disclaimer">By submitting, you agree to our <a href="/privacy-policy">Privacy Policy</a>. We will only use your information to respond to your inquiry.</p>
+          <p class="form-disclaimer">By submitting, you agree to our <a href="https://www.shineflowseattle.com/privacy-policy">Privacy Policy</a>. We will only use your information to respond to your inquiry.</p>
         </form>
       </div>
     </div>
@@ -986,23 +1283,41 @@
 <!-- ── FOOTER ─────────────────────────────────────── -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">Shine<span>flow</span></div>
+    <div class="footer-logo">Shineflow<span class="logo-dot"></span></div>
     <div class="footer-links">
       <a href="https://www.shineflowseattle.com">Home</a>
-      <a href="https://dsp.shineflowseattle.com">DSP Service</a>
-      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="#dashboards">Dashboards</a>
+      <a href="https://www.shineflowseattle.com/privacy-policy">Privacy Policy</a>
       <a href="#contact">Contact</a>
     </div>
-    <p style="font-size:13px; color:var(--muted-dark);">© 2026 Shineflow. All rights reserved.</p>
+    <p style="font-size:13px; color:var(--muted-dark);">600 1st Ave Ste 102, Seattle, WA 98104 · © 2026 Shineflow. All rights reserved.</p>
   </div>
   <p class="footer-disclaimer">Shineflow is an independent service provider. Shineflow is not endorsed, certified, or approved by Amazon. Amazon, Amazon Selling Partner API (SP-API), and Amazon Brand Analytics are trademarks of Amazon.com, Inc. or its affiliates. Use of these names is for descriptive purposes only. Shineflow accesses Amazon Selling Partner data only after authorization by the relevant Selling Partner, and only to provide the services requested by that Selling Partner.</p>
 </footer>
 
 <script>
   const header = document.getElementById('header');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 20);
-  }, { passive: true });
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // No backend on this static site — compose an email from the form instead.
+  const form = document.querySelector('.contact-form-wrap form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const v = (n) => (form.elements[n] ? form.elements[n].value.trim() : '');
+      const subject = `Quote request — ${v('company') || v('name') || 'Amazon Seller'}`;
+      const body =
+        `Name: ${v('name')}\n` +
+        `Company: ${v('company')}\n` +
+        `Email: ${v('email')}\n` +
+        `Service interest: ${v('plan')}\n\n` +
+        `${v('message')}`;
+      window.location.href =
+        `mailto:info@shineflowseattle.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  }
 </script>
 
 </body>

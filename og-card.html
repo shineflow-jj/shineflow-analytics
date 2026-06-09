@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1200px; height:630px; overflow:hidden; }
+  body {
+    background:#101010; color:#f6f2eb;
+    font-family:'Inter',system-ui,sans-serif;
+    position:relative;
+    display:flex; flex-direction:column; justify-content:center;
+    padding:84px 90px;
+  }
+  .glow {
+    position:absolute; top:-260px; right:-160px;
+    width:760px; height:760px; border-radius:50%;
+    background:radial-gradient(circle at center, rgba(255,122,26,.30) 0%, transparent 62%);
+  }
+  .wordmark {
+    font-family:'Sora',sans-serif; font-weight:700;
+    font-size:34px; letter-spacing:.18em; text-transform:uppercase;
+    display:flex; align-items:flex-start; gap:8px; margin-bottom:40px;
+  }
+  .wordmark .dot { width:11px; height:11px; border-radius:50%; background:#ff7a1a; margin-top:5px; box-shadow:0 0 16px rgba(255,122,26,.7); }
+  h1 {
+    font-family:'Sora',sans-serif; font-weight:800;
+    font-size:72px; line-height:1.02; letter-spacing:-.02em;
+    max-width:920px; position:relative; z-index:2;
+    background:linear-gradient(180deg,#fff 0%,#e6e1d8 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  p.sub {
+    margin-top:28px; font-size:26px; line-height:1.45;
+    color:rgba(246,242,235,.66); max-width:840px; font-weight:400;
+  }
+  .accent { color:#ff7a1a; -webkit-text-fill-color:#ff7a1a; }
+  .foot {
+    position:absolute; left:90px; bottom:64px; right:90px;
+    display:flex; align-items:center; justify-content:space-between;
+    font-size:20px; color:rgba(246,242,235,.5); font-weight:500;
+  }
+  .pill { border:1px solid rgba(246,242,235,.18); border-radius:999px; padding:9px 20px; font-size:18px; }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="wordmark">Shineflow<span class="dot"></span></div>
+  <h1>Data-Driven Amazon<br/>Account Management</h1>
+  <p class="sub">Run by Amazon experts. We turn your <span class="accent">SP-API</span> data into reports, dashboards, and the insights that grow your business.</p>
+  <div class="foot">
+    <span>analytics.shineflowseattle.com</span>
+    <span class="pill">Reports · Dashboards · Insights</span>
+  </div>
+</body>
+</html>
