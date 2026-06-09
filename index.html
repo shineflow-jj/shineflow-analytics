@@ -202,25 +202,10 @@
       -webkit-backdrop-filter: blur(14px);
       border-bottom-color: var(--line);
     }
-    .logo-text {
-      font-family: 'Sora', system-ui, sans-serif;
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--cream);
-      display: inline-flex;
-      align-items: center;
-      line-height: 1;
-      padding-left: 2px;
-    }
-    .logo-text .logo-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 10px var(--accent-glow);
-      margin-left: 4px;
-      align-self: flex-start;
-      margin-top: 2px;
+    .logo-text { display: inline-flex; align-items: center; }
+    .logo-img {
+      height: 22px; width: auto; display: block;
+      filter: brightness(0) invert(1);
     }
     .nav { display: flex; gap: 28px; font-size: 14px; }
     .nav a { color: rgba(246,242,235,.65); transition: color var(--t-fast); }
@@ -640,16 +625,10 @@
       gap: 16px;
       margin-bottom: 24px;
     }
-    .footer-logo {
-      font-family: 'Sora', system-ui, sans-serif;
-      font-size: 16px; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      display: inline-flex; align-items: flex-start; line-height: 1;
-    }
-    .footer-logo .logo-dot {
-      width: 5px; height: 5px; border-radius: 50%;
-      background: var(--accent); margin-left: 4px; margin-top: 1px;
-      box-shadow: 0 0 8px var(--accent-glow);
+    .footer-logo { display: inline-flex; align-items: center; }
+    .footer-logo img {
+      height: 18px; width: auto; display: block;
+      filter: brightness(0) invert(1);
     }
     .footer-links { display: flex; gap: 24px; }
     .footer-links a { font-size: 13px; color: var(--muted-dark); transition: color var(--t-fast); }
@@ -766,6 +745,7 @@
       .dash-body { padding: 18px; }
       .dash-url { display: none; }
       .stat-num { font-size: 26px; }
+      .logo-img { height: 18px; }
     }
   </style>
 </head>
@@ -773,7 +753,7 @@
 
 <!-- ── HEADER ────────────────────────────────────── -->
 <header class="header" id="header">
-  <a href="#top" class="logo-text" aria-label="Shineflow">Shineflow<span class="logo-dot"></span></a>
+  <a href="#top" class="logo-text" aria-label="Shineflow"><img class="logo-img" src="/logo.png" alt="Shineflow" width="534" height="64" /></a>
   <nav class="nav">
     <a href="#dashboards">Dashboards</a>
     <a href="#services">Services</a>
@@ -1283,7 +1263,7 @@
 <!-- ── FOOTER ─────────────────────────────────────── -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">Shineflow<span class="logo-dot"></span></div>
+    <div class="footer-logo"><img src="/logo.png" alt="Shineflow" width="534" height="64" /></div>
     <div class="footer-links">
       <a href="https://www.shineflowseattle.com">Home</a>
       <a href="#dashboards">Dashboards</a>
