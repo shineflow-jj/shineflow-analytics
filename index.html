@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shineflow Amazon Seller Analytics | SP-API-Enabled Analytics for Amazon Selling Partners</title>
+  <meta name="description" content="Shineflow provides SP-API-enabled analytics and managed marketplace services for authorized Amazon Selling Partners, including Brand Analytics insights, sales performance reporting, and strategic recommendations." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:        #101010;
+      --ink-2:      #1a1a1a;
+      --ink-3:      #232323;
+      --line:       rgba(246, 242, 235, 0.12);
+      --line-strong:rgba(246, 242, 235, 0.24);
+      --cream:      #f6f2eb;
+      --cream-2:    #ece6d9;
+      --cream-3:    #ddd5c2;
+      --paper:      #faf7f1;
+      --muted:      #8a8784;
+      --muted-dark: #9a9690;
+      --accent:     #ff7a1a;
+      --accent-2:   #ff9a4d;
+      --accent-3:   #d95f0a;
+      --accent-glow:rgba(255, 122, 26, 0.55);
+
+      --max: 1200px;
+      --gutter: clamp(20px, 4vw, 56px);
+      --radius-sm: 8px;
+      --radius:    14px;
+      --radius-lg: 22px;
+      --t: 420ms cubic-bezier(.2,.8,.2,1);
+      --t-fast: 200ms cubic-bezier(.2,.8,.2,1);
+    }
+
+    html, body {
+      background: var(--ink);
+      color: var(--cream);
+      font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* ── TYPE ──────────────────────────────────────── */
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted-dark);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .eyebrow .dot {
+      display: inline-block;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent-glow);
+      flex-shrink: 0;
+    }
+    .h-display {
+      font-weight: 800;
+      font-size: clamp(44px, 7vw, 96px);
+      line-height: 0.97;
+      letter-spacing: -0.03em;
+      background: linear-gradient(180deg, #fff 0%, #e8e4dc 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .h-section {
+      font-weight: 700;
+      font-size: clamp(30px, 4vw, 56px);
+      line-height: 1.06;
+      letter-spacing: -0.02em;
+    }
+    .h-card {
+      font-weight: 600;
+      font-size: clamp(18px, 1.8vw, 22px);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .body-lg {
+      font-size: clamp(16px, 1.2vw, 18px);
+      line-height: 1.6;
+      color: rgba(246, 242, 235, 0.72);
+    }
+    .body {
+      font-size: 15px;
+      line-height: 1.65;
+      color: rgba(246, 242, 235, 0.68);
+    }
+
+    /* ── LAYOUT ────────────────────────────────────── */
+    .section {
+      padding: clamp(80px, 10vw, 140px) var(--gutter);
+      position: relative;
+    }
+    .section-cream {
+      background: var(--cream);
+      color: var(--ink);
+    }
+    .section-cream .body, .section-cream .body-lg { color: rgba(16,16,16,0.65); }
+    .section-cream .eyebrow { color: rgba(16,16,16,0.5); }
+    .section-cream .h-section { color: var(--ink); background: none; -webkit-background-clip: unset; background-clip: unset; }
+    .section-dark {
+      background: var(--ink-2);
+    }
+    .container { max-width: var(--max); margin: 0 auto; }
+    .section-head { display: flex; flex-direction: column; gap: 16px; margin-bottom: clamp(40px, 5vw, 64px); }
+
+    /* ── BUTTONS ───────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: 15px;
+      letter-spacing: -0.005em;
+      border: 1px solid transparent;
+      transition: transform var(--t-fast), background var(--t-fast), border-color var(--t-fast);
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: var(--accent);
+      color: #1a0a00;
+      box-shadow: 0 8px 28px -8px var(--accent-glow), 0 0 0 1px rgba(255,122,26,.5) inset;
+    }
+    .btn-primary:hover { background: var(--accent-2); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--cream);
+      border-color: var(--line-strong);
+    }
+    .btn-ghost:hover { background: rgba(246,242,235,.06); border-color: rgba(246,242,235,.4); }
+    .section-cream .btn-ghost { color: var(--ink); border-color: rgba(16,16,16,.18); }
+    .section-cream .btn-ghost:hover { background: rgba(16,16,16,.04); border-color: rgba(16,16,16,.35); }
+    .section-cream .btn-primary { box-shadow: 0 6px 20px -6px var(--accent-glow); }
+
+    /* ── HEADER ────────────────────────────────────── */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px var(--gutter);
+      transition: background var(--t), border-color var(--t);
+      border-bottom: 1px solid transparent;
+    }
+    .header.scrolled {
+      background: rgba(16,16,16,.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom-color: var(--line);
+    }
+    .logo-text {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--cream);
+    }
+    .logo-text span { color: var(--accent); }
+    .nav { display: flex; gap: 28px; font-size: 14px; }
+    .nav a { color: rgba(246,242,235,.65); transition: color var(--t-fast); }
+    .nav a:hover { color: var(--cream); }
+    .header-right { display: flex; align-items: center; gap: 14px; }
+    @media (max-width: 860px) { .nav { display: none; } }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 140px var(--gutter) 100px;
+      background: var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(ellipse at center, rgba(255,122,26,.14) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted-dark);
+    }
+    .hero-badge .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+    .hero-sub {
+      max-width: 640px;
+      font-size: clamp(16px, 1.3vw, 19px);
+      line-height: 1.6;
+      color: rgba(246,242,235,.65);
+    }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+    .hero-divider {
+      width: 1px; height: 48px;
+      background: linear-gradient(to bottom, transparent, var(--line-strong), transparent);
+      margin: 8px auto 0;
+    }
+
+    /* ── STATS BAR ─────────────────────────────────── */
+    .stats-bar {
+      background: var(--ink-2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 32px var(--gutter);
+    }
+    .stats-grid {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+    }
+    .stat-item {
+      background: var(--ink-2);
+      padding: 28px 32px;
+      text-align: center;
+    }
+    .stat-num {
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--cream);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-num span { color: var(--accent); }
+    .stat-label { font-size: 13px; color: var(--muted-dark); letter-spacing: 0.02em; }
+
+    /* ── SERVICE OVERVIEW ──────────────────────────── */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .overview-note {
+      background: rgba(246,242,235,.04);
+      border: 1px solid var(--line-strong);
+      border-left: 2px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+    }
+    .overview-note p { font-size: 14px; color: rgba(246,242,235,.68); line-height: 1.75; }
+    .overview-note strong { color: var(--cream); }
+
+    /* ── BRAND ANALYTICS ───────────────────────────── */
+    .ba-note {
+      background: rgba(255,122,26,.07);
+      border: 1px solid rgba(255,122,26,.25);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 48px;
+      font-size: 14px;
+      color: rgba(246,242,235,.75);
+      line-height: 1.75;
+    }
+    .ba-note strong { color: var(--accent-2); }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .feature-card {
+      background: var(--ink-2);
+      padding: 36px 28px;
+      transition: background var(--t-fast);
+    }
+    .feature-card:hover { background: var(--ink-3); }
+    .feature-icon {
+      width: 44px; height: 44px;
+      background: rgba(255,122,26,.12);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,122,26,.2);
+    }
+    .feature-card .h-card { color: var(--cream); margin-bottom: 10px; }
+    .feature-card .body { margin-bottom: 20px; }
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .feature-list li {
+      font-size: 13px;
+      color: rgba(246,242,235,.55);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .feature-list li::before {
+      content: "›";
+      position: absolute; left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* ── OTHER SERVICES ────────────────────────────── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(16,16,16,.2);
+      border: 1px solid rgba(16,16,16,.15);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 48px;
+    }
+    .service-item {
+      background: var(--paper);
+      padding: 28px 24px;
+      transition: background var(--t-fast);
+    }
+    .service-item:hover { background: var(--cream-2); }
+    .service-icon { font-size: 22px; margin-bottom: 14px; }
+    .service-item h4 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+    .service-item p { font-size: 13px; color: rgba(16,16,16,.6); line-height: 1.6; }
+
+    /* ── REPORTING ─────────────────────────────────── */
+    .reporting-list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 48px;
+    }
+    .reporting-item {
+      background: var(--ink-2);
+      padding: 28px 20px;
+      text-align: center;
+    }
+    .reporting-item .r-icon { font-size: 26px; margin-bottom: 12px; }
+    .reporting-item p { font-size: 13px; color: rgba(246,242,235,.6); line-height: 1.5; }
+
+    /* ── PRICING ───────────────────────────────────── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .pricing-card {
+      background: var(--ink-2);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      transition: border-color var(--t-fast);
+    }
+    .pricing-card:hover { border-color: rgba(246,242,235,.3); }
+    .pricing-card.featured {
+      border-color: rgba(255,122,26,.5);
+      background: linear-gradient(160deg, rgba(255,122,26,.07) 0%, var(--ink-2) 60%);
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -13px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #1a0a00;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .pricing-plan { font-size: 16px; font-weight: 700; color: var(--cream); margin-bottom: 6px; }
+    .pricing-scope { font-size: 13px; color: var(--muted-dark); margin-bottom: 24px; line-height: 1.5; }
+    .pricing-price {
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 24px;
+    }
+    .pricing-from { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.05em; text-transform: uppercase; }
+    .pricing-amount {
+      font-size: clamp(30px, 3vw, 40px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--cream);
+      line-height: 1.1;
+    }
+    .pricing-period { font-size: 14px; color: var(--muted-dark); }
+    .pricing-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+      margin-bottom: 28px;
+    }
+    .pricing-features li {
+      font-size: 14px;
+      color: rgba(246,242,235,.68);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .pricing-features li::before {
+      content: "✓";
+      position: absolute; left: 0;
+      color: var(--accent);
+      font-size: 12px;
+    }
+    .pricing-cta { display: block; text-align: center; }
+    .pricing-note {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted-dark);
+      line-height: 1.7;
+    }
+
+    /* ── DATA USE ──────────────────────────────────── */
+    .data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .data-card {
+      background: rgba(16,16,16,.25);
+      border: 1px solid rgba(16,16,16,.12);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+    }
+    .data-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .data-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .data-card ul li {
+      font-size: 14px;
+      color: rgba(16,16,16,.65);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.65;
+    }
+    .data-card ul li::before {
+      content: "·";
+      position: absolute; left: 0;
+      color: var(--accent-3);
+      font-size: 20px;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    /* ── CONTACT ───────────────────────────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-info h3 { font-size: 20px; font-weight: 700; margin-bottom: 24px; color: var(--cream); }
+    .contact-rows { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+    .contact-row { display: flex; gap: 16px; align-items: flex-start; }
+    .contact-row .lbl { font-size: 12px; font-weight: 600; color: var(--muted-dark); min-width: 72px; padding-top: 2px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .contact-row .val { font-size: 14px; color: rgba(246,242,235,.8); }
+    .contact-row .val a { color: var(--accent-2); }
+    .contact-row .val a:hover { color: var(--accent); }
+
+    .contact-form-wrap {
+      background: var(--ink-2);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+    }
+    .contact-form-wrap h3 { font-size: 18px; font-weight: 700; margin-bottom: 24px; color: var(--cream); }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 600; color: var(--muted-dark); margin-bottom: 7px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      background: rgba(246,242,235,.05);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-family: 'Pretendard', system-ui, sans-serif;
+      color: var(--cream);
+      outline: none;
+      transition: border-color var(--t-fast), background var(--t-fast);
+      -webkit-appearance: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(246,242,235,.28); }
+    .form-group select option { background: var(--ink-2); color: var(--cream); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(255,122,26,.5);
+      background: rgba(255,122,26,.04);
+    }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit {
+      width: 100%;
+      background: var(--accent);
+      color: #1a0a00;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Pretendard', system-ui, sans-serif;
+      cursor: pointer;
+      box-shadow: 0 8px 28px -8px var(--accent-glow);
+      transition: background var(--t-fast), transform var(--t-fast);
+    }
+    .form-submit:hover { background: var(--accent-2); transform: translateY(-1px); }
+    .form-disclaimer { margin-top: 12px; font-size: 12px; color: var(--muted-dark); line-height: 1.6; text-align: center; }
+    .form-disclaimer a { color: rgba(246,242,235,.5); }
+    .form-disclaimer a:hover { color: var(--cream); }
+
+    /* ── FOOTER ────────────────────────────────────── */
+    footer {
+      background: #0a0a0a;
+      border-top: 1px solid var(--line);
+      padding: 40px var(--gutter);
+    }
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .footer-logo { font-size: 15px; font-weight: 800; letter-spacing: -0.02em; }
+    .footer-logo span { color: var(--accent); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: var(--muted-dark); transition: color var(--t-fast); }
+    .footer-links a:hover { color: var(--cream); }
+    .footer-disclaimer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      font-size: 11px;
+      color: rgba(246,242,235,.3);
+      line-height: 1.75;
+    }
+
+    /* ── RESPONSIVE ────────────────────────────────── */
+    @media (max-width: 960px) {
+      .overview-grid,
+      .features-grid,
+      .pricing-grid,
+      .data-grid,
+      .contact-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .reporting-list { grid-template-columns: repeat(3, 1fr); }
+      .stats-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .section { padding: 64px 20px; }
+      .hero { padding: 110px 20px 80px; }
+      .services-grid,
+      .reporting-list { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: 1fr; }
+      .contact-form-wrap { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ────────────────────────────────────── -->
+<header class="header" id="header">
+  <a href="https://www.shineflowseattle.com/" class="logo-text">Shine<span>flow</span></a>
+  <nav class="nav">
+    <a href="https://www.shineflowseattle.com/case-study">Case Study</a>
+    <a href="https://www.shineflowseattle.com/3pl-service">3PL Service</a>
+    <a href="https://www.shineflowseattle.com/company">Company</a>
+    <a href="https://www.shineflowseattle.com/webinar">Webinar</a>
+  </nav>
+  <div class="header-right">
+    <a href="#contact" class="btn btn-primary" style="padding:10px 20px; font-size:14px;">Request a Quote</a>
+  </div>
+</header>
+
+<!-- ── HERO ──────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge"><span class="dot"></span> Amazon SP-API · Public Solution Provider</div>
+    <h1 class="h-display">Shineflow Amazon<br/>Seller Analytics</h1>
+    <p class="hero-sub">SP-API-enabled analytics and marketplace management services for authorized Amazon Selling Partners. Understand performance, identify growth opportunities, and make data-driven decisions.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-primary">Request a Quote</a>
+      <a href="#services" class="btn btn-ghost">View Services</a>
+    </div>
+    <div class="hero-divider"></div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ──────────────────────────────────── -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-num"><span>3</span> SP-API Services</div>
+      <div class="stat-label">Brand Analytics · Catalog · Operations</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">Authorized<span>-Only</span></div>
+      <div class="stat-label">Data access after Selling Partner authorization</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">Quote<span>-Based</span></div>
+      <div class="stat-label">From $1,500 / month · Custom enterprise pricing</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SERVICE OVERVIEW ───────────────────────────── -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot"></span> Service Overview</div>
+      <h2 class="h-section" style="color:var(--cream); background:none; -webkit-background-clip:unset; background-clip:unset;">Marketplace Analytics &amp;<br/>Management for Amazon Sellers</h2>
+    </div>
+    <div class="overview-grid">
+      <div>
+        <p class="body-lg" style="margin-bottom:20px;">Shineflow Amazon Seller Analytics is a software-supported analytics and managed marketplace service for Amazon Selling Partners. Our service helps authorized Amazon sellers and vendors understand marketplace performance, identify growth opportunities, and make data-driven decisions using data accessed through Amazon Selling Partner API (SP-API), where applicable and authorized.</p>
+        <p class="body">Shineflow only accesses Amazon Selling Partner data after the Selling Partner authorizes Shineflow's application or service. Data access and reporting features depend on the Selling Partner's eligibility, authorization, and the applicable SP-API roles approved by Amazon.</p>
+      </div>
+      <div class="overview-note">
+        <p><strong>Authorization-first approach.</strong> Shineflow does not access any Selling Partner account data without explicit authorization from the Selling Partner. All analytics, reports, and recommendations are delivered exclusively to the Selling Partner that authorized access to the relevant account data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BRAND ANALYTICS ────────────────────────────── -->
+<section class="section section-dark" id="brand-analytics">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot"></span> Brand Analytics</div>
+      <h2 class="h-section" style="color:var(--cream); background:none; -webkit-background-clip:unset; background-clip:unset;">Brand Analytics Insights</h2>
+      <p class="body-lg">For eligible and authorized Selling Partners with access to Amazon Brand Analytics, Shineflow provides analytical reporting and strategic recommendations based on Brand Analytics datasets available through SP-API.</p>
+    </div>
+
+    <div class="ba-note">
+      <strong>Availability notice.</strong> Brand Analytics-related features are available to eligible and authorized Selling Partners, subject to Amazon role approval, Selling Partner authorization, and data availability. Features described below are provided where the relevant Brand Analytics datasets are available to the authorized Selling Partner.
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🔍</div>
+        <div class="h-card">Amazon Search Terms Analysis</div>
+        <p class="body">Analyze search term performance, clicked ASINs, keyword opportunities, and content optimization for the authorized seller's catalog.</p>
+        <ul class="feature-list">
+          <li>Keyword discovery and prioritization</li>
+          <li>Advertising keyword expansion</li>
+          <li>Product detail page optimization</li>
+          <li>Competitive search visibility review</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛒</div>
+        <div class="h-card">Market Basket Analysis</div>
+        <p class="body">Review products frequently purchased together with the authorized seller's products, where Brand Analytics data is available.</p>
+        <ul class="feature-list">
+          <li>Bundling strategy development</li>
+          <li>Cross-selling opportunities</li>
+          <li>Promotion planning</li>
+          <li>Catalog expansion opportunities</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <div class="h-card">Repeat Purchase Analysis</div>
+        <p class="body">Review repeat purchase patterns by product and reporting period, where the relevant Brand Analytics data is available.</p>
+        <ul class="feature-list">
+          <li>Replenishment and reorder strategy</li>
+          <li>Customer retention planning</li>
+          <li>Product lifecycle analysis</li>
+          <li>Subscription or recurring purchase strategy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── OTHER SP-API SERVICES ──────────────────────── -->
+<section class="section section-cream" id="sp-api-services">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot"></span> SP-API Services</div>
+      <h2 class="h-section">Sales, Traffic, Catalog &amp; Operations Insights</h2>
+      <p class="body-lg" style="color:rgba(16,16,16,.65);">In addition to Brand Analytics-related insights where available, Shineflow provides Amazon marketplace operations and analytics support for authorized Selling Partners.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-item">
+        <div class="service-icon">📈</div>
+        <h4>Sales &amp; Traffic Performance</h4>
+        <p>Sales and traffic performance reporting at ASIN and account level.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">📦</div>
+        <h4>Catalog &amp; Listing Health</h4>
+        <p>Product listing and catalog health review to identify content gaps and opportunities.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🏭</div>
+        <h4>Inventory &amp; Replenishment</h4>
+        <p>Inventory monitoring and replenishment planning support to reduce stockouts and overstock.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">💰</div>
+        <h4>Pricing &amp; Promotions</h4>
+        <p>Pricing strategy review and promotional opportunity analysis.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">📣</div>
+        <h4>Advertising Performance</h4>
+        <p>Advertising performance review and campaign optimization recommendations.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">📋</div>
+        <h4>Business Review Reporting</h4>
+        <p>Weekly or monthly structured business review reports for seller account performance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── REPORTING ──────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot"></span> Reporting &amp; Recommendations</div>
+      <h2 class="h-section" style="color:var(--cream); background:none; -webkit-background-clip:unset; background-clip:unset;">Strategic Reporting to Drive<br/>Marketplace Decisions</h2>
+      <p class="body-lg">Shineflow provides dashboards, exports, business review reports, and strategic recommendations to help Selling Partners make informed marketplace decisions.</p>
+    </div>
+    <div class="reporting-list">
+      <div class="reporting-item">
+        <div class="r-icon">🔑</div>
+        <p>Identify high-opportunity keywords and ASINs</p>
+      </div>
+      <div class="reporting-item">
+        <div class="r-icon">✏️</div>
+        <p>Improve product detail page content</p>
+      </div>
+      <div class="reporting-item">
+        <div class="r-icon">🎯</div>
+        <p>Prioritize advertising and promotional opportunities</p>
+      </div>
+      <div class="reporting-item">
+        <div class="r-icon">📊</div>
+        <p>Understand product-level growth drivers</p>
+      </div>
+      <div class="reporting-item">
+        <div class="r-icon">🔔</div>
+        <p>Monitor marketplace operations and account performance</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING ────────────────────────────────────── -->
+<section class="section section-dark" id="pricing">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot"></span> Pricing</div>
+      <h2 class="h-section" style="color:var(--cream); background:none; -webkit-background-clip:unset; background-clip:unset;">Transparent, Quote-Based Pricing</h2>
+      <p class="body-lg">Pricing depends on the number of marketplaces, ASIN count, reporting frequency, service scope, and level of strategic support.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-plan">Starter Analytics</div>
+        <div class="pricing-scope">1 marketplace · Up to 50 ASINs · Monthly reporting</div>
+        <div class="pricing-price">
+          <div class="pricing-from">Starting from</div>
+          <div class="pricing-amount">$1,500</div>
+          <div class="pricing-period">/ month</div>
+        </div>
+        <ul class="pricing-features">
+          <li>1 marketplace</li>
+          <li>Up to 50 ASINs</li>
+          <li>Monthly analytics report</li>
+          <li>Sales &amp; traffic analysis</li>
+          <li>Catalog health review</li>
+          <li>Email support</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost pricing-cta">Request a Quote</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-plan">Growth Analytics</div>
+        <div class="pricing-scope">1–2 marketplaces · Up to 200 ASINs · Weekly reporting</div>
+        <div class="pricing-price">
+          <div class="pricing-from">Starting from</div>
+          <div class="pricing-amount">$3,000</div>
+          <div class="pricing-period">/ month</div>
+        </div>
+        <ul class="pricing-features">
+          <li>1–2 marketplaces</li>
+          <li>Up to 200 ASINs</li>
+          <li>Weekly reporting &amp; strategy</li>
+          <li>Brand Analytics insights (where available)</li>
+          <li>Advertising performance review</li>
+          <li>Dedicated account support</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary pricing-cta">Request a Quote</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-plan">Enterprise</div>
+        <div class="pricing-scope">Multi-marketplace · Custom scope · Custom reporting</div>
+        <div class="pricing-price">
+          <div class="pricing-from">Pricing</div>
+          <div class="pricing-amount">Custom</div>
+          <div class="pricing-period">quote</div>
+        </div>
+        <ul class="pricing-features">
+          <li>Multi-marketplace support</li>
+          <li>Custom ASIN scope</li>
+          <li>Advanced analytics &amp; reporting</li>
+          <li>Full Brand Analytics suite (where available)</li>
+          <li>Dedicated account management</li>
+          <li>Custom integration support</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost pricing-cta">Contact Us</a>
+      </div>
+    </div>
+    <p class="pricing-note">Sample pricing scenarios. Custom pricing may apply depending on marketplace count, catalog size, advertising scope, reporting needs, and integration complexity. All prices in USD.</p>
+  </div>
+</section>
+
+<!-- ── DATA USE & COMPLIANCE ──────────────────────── -->
+<section class="section section-cream" id="compliance">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot"></span> Data Use &amp; Compliance</div>
+      <h2 class="h-section">Your Data. Your Authorization.<br/>Your Reports.</h2>
+      <p class="body-lg" style="color:rgba(16,16,16,.65);">Shineflow is committed to responsible, authorized use of Amazon Selling Partner data. Our data practices are designed to protect Selling Partner information and comply with Amazon's data use policies.</p>
+    </div>
+    <div class="data-grid">
+      <div class="data-card" style="background:var(--paper); border-color:rgba(16,16,16,.1);">
+        <h3><span>✅</span> What We Do</h3>
+        <ul>
+          <li>Access Selling Partner data only after explicit authorization from the Selling Partner</li>
+          <li>Use data solely to provide analytics, reporting, and marketplace management services to the authorizing Selling Partner</li>
+          <li>Deliver reports and recommendations only to the Selling Partner that authorized access</li>
+          <li>Maintain administrative, technical, and organizational safeguards to protect Selling Partner data</li>
+          <li>Limit data access to the scope authorized by the Selling Partner and approved by Amazon</li>
+        </ul>
+      </div>
+      <div class="data-card" style="background:var(--paper); border-color:rgba(16,16,16,.1);">
+        <h3><span>🚫</span> What We Do Not Do</h3>
+        <ul>
+          <li>Sell Amazon Selling Partner data to any third party</li>
+          <li>Aggregate Selling Partner data across customers for resale or disclosure to other parties</li>
+          <li>Publish, disclose, or share insights about Amazon's business</li>
+          <li>Share one Selling Partner's data with another Selling Partner</li>
+          <li>Access account data without prior authorization from the Selling Partner</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────── -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot"></span> Contact</div>
+      <h2 class="h-section" style="color:var(--cream); background:none; -webkit-background-clip:unset; background-clip:unset;">Get in Touch with Shineflow</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Company Information</h3>
+        <div class="contact-rows">
+          <div class="contact-row"><span class="lbl">Company</span><span class="val">Shineflow</span></div>
+          <div class="contact-row"><span class="lbl">Service</span><span class="val">Shineflow Amazon Seller Analytics</span></div>
+          <div class="contact-row"><span class="lbl">Email</span><span class="val"><a href="mailto:info@shineflowseattle.com">info@shineflowseattle.com</a></span></div>
+          <div class="contact-row"><span class="lbl">Website</span><span class="val"><a href="https://www.shineflowseattle.com">shineflowseattle.com</a></span></div>
+          <div class="contact-row"><span class="lbl">Privacy</span><span class="val"><a href="/privacy-policy">Privacy Policy</a></span></div>
+        </div>
+        <p class="body">Shineflow works with authorized Amazon Selling Partners to provide analytics, reporting, and marketplace management services. Contact us to learn how we can support your Amazon business.</p>
+      </div>
+      <div class="contact-form-wrap">
+        <h3>Request a Quote</h3>
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Your company name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="plan">Service Interest</label>
+            <select id="plan" name="plan">
+              <option value="">Select a plan...</option>
+              <option value="starter">Starter Analytics (from $1,500/mo)</option>
+              <option value="growth">Growth Analytics (from $3,000/mo)</option>
+              <option value="enterprise">Enterprise (Custom quote)</option>
+              <option value="unsure">Not sure — please advise</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message (optional)</label>
+            <textarea id="message" name="message" placeholder="Tell us about your Amazon business — marketplaces, ASIN count, key goals..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Inquiry →</button>
+          <p class="form-disclaimer">By submitting, you agree to our <a href="/privacy-policy">Privacy Policy</a>. We will only use your information to respond to your inquiry.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Shine<span>flow</span></div>
+    <div class="footer-links">
+      <a href="https://www.shineflowseattle.com">Home</a>
+      <a href="https://dsp.shineflowseattle.com">DSP Service</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p style="font-size:13px; color:var(--muted-dark);">© 2026 Shineflow. All rights reserved.</p>
+  </div>
+  <p class="footer-disclaimer">Shineflow is an independent service provider. Shineflow is not endorsed, certified, or approved by Amazon. Amazon, Amazon Selling Partner API (SP-API), and Amazon Brand Analytics are trademarks of Amazon.com, Inc. or its affiliates. Use of these names is for descriptive purposes only. Shineflow accesses Amazon Selling Partner data only after authorization by the relevant Selling Partner, and only to provide the services requested by that Selling Partner.</p>
+</footer>
+
+<script>
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+</script>
+
+</body>
+</html>
