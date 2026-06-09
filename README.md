@@ -1,7 +1,7 @@
 # Shineflow Amazon Seller Analytics
 
 Static marketing landing page for **Shineflow Amazon Seller Analytics**, deployed at
-[analytics.shineflowseattle.com](https://analytics.shineflowseattle.com).
+[service.shineflowseattle.com](https://service.shineflowseattle.com).
 
 Pure HTML / CSS / JS — no framework, no build step.
 
@@ -10,6 +10,8 @@ Pure HTML / CSS / JS — no framework, no build step.
 ```
 .
 ├── index.html           # The entire landing page (inline CSS + JS)
+├── privacy.html         # Privacy Policy (SP-API / Brand Analytics data use)
+├── logo.png             # Shineflow wordmark (header / footer)
 ├── favicon.svg          # Site favicon (modern browsers)
 ├── apple-touch-icon.png # 180×180 home-screen icon (iOS)
 ├── og-image.png         # 1200×630 Open Graph / Twitter share image
@@ -17,8 +19,9 @@ Pure HTML / CSS / JS — no framework, no build step.
 └── README.md
 ```
 
-Everything the page needs at runtime is `index.html`, `favicon.svg`, `apple-touch-icon.png`,
-and `og-image.png`. Fonts (Pretendard, Sora) load from public CDNs.
+Everything the page needs at runtime is `index.html`, `privacy.html`, `logo.png`,
+`favicon.svg`, `apple-touch-icon.png`, and `og-image.png`. Fonts (Pretendard, Sora)
+load from public CDNs.
 
 ## Local preview
 
@@ -46,7 +49,7 @@ vercel --prod   # production deploy
 ```
 
 ### Custom domain
-In **Project → Settings → Domains**, add `analytics.shineflowseattle.com` and point the
+In **Project → Settings → Domains**, add `service.shineflowseattle.com` and point the
 DNS `CNAME` to `cname.vercel-dns.com` (per Vercel's instructions). All asset paths are
 root-relative or absolute production URLs, so the page works once the domain is attached.
 

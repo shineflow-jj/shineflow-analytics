@@ -11,15 +11,15 @@
   <meta name="author" content="Shineflow" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#101010" />
-  <link rel="canonical" href="https://analytics.shineflowseattle.com/" />
+  <link rel="canonical" href="https://service.shineflowseattle.com/" />
 
   <!-- ── OPEN GRAPH ───────────────────────────────── -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Shineflow Amazon Seller Analytics" />
   <meta property="og:title" content="Shineflow Amazon Seller Analytics | Data-Driven Amazon Account Management" />
   <meta property="og:description" content="Data-driven Amazon account management by Amazon experts. SP-API-powered reports & dashboards, plus expert analysis and actionable insights for Amazon Selling Partners." />
-  <meta property="og:url" content="https://analytics.shineflowseattle.com/" />
-  <meta property="og:image" content="https://analytics.shineflowseattle.com/og-image.png" />
+  <meta property="og:url" content="https://service.shineflowseattle.com/" />
+  <meta property="og:image" content="https://service.shineflowseattle.com/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Shineflow Amazon Seller Analytics" />
@@ -29,7 +29,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Shineflow Amazon Seller Analytics | Data-Driven Amazon Account Management" />
   <meta name="twitter:description" content="Data-driven Amazon account management by Amazon experts. SP-API-powered reports & dashboards, plus expert analysis and actionable insights." />
-  <meta name="twitter:image" content="https://analytics.shineflowseattle.com/og-image.png" />
+  <meta name="twitter:image" content="https://service.shineflowseattle.com/og-image.png" />
 
   <!-- ── FAVICON ──────────────────────────────────── -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -337,6 +337,30 @@
       line-height: 1.75;
     }
     .ba-note strong { color: var(--accent-2); }
+    .ba-caps {
+      margin-top: 32px;
+      background: rgba(246,242,235,.04);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+    }
+    .ba-caps h3 { font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 18px; }
+    .ba-caps ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 11px 32px; }
+    .ba-caps li {
+      font-size: 14px; color: rgba(246,242,235,.72);
+      padding-left: 18px; position: relative; line-height: 1.5;
+    }
+    .ba-caps li::before { content: "›"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+    .ba-align {
+      margin-top: 24px;
+      background: rgba(255,122,26,.07);
+      border: 1px solid rgba(255,122,26,.25);
+      border-left: 2px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      font-size: 14px; color: rgba(246,242,235,.78); line-height: 1.75;
+    }
+    .ba-align strong { color: var(--accent-2); }
     .features-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -746,6 +770,7 @@
       .dash-url { display: none; }
       .stat-num { font-size: 26px; }
       .logo-img { height: 18px; }
+      .ba-caps ul { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -806,7 +831,7 @@
     </div>
     <div class="overview-grid">
       <div>
-        <p class="body-lg" style="margin-bottom:20px;">Shineflow is a data-driven Amazon account management service run by experienced Amazon operators. We connect to your Amazon data through the Selling Partner API (SP-API), build the reports and dashboards that matter for your business, and pair them with the analysis and recommendations our team delivers as your operating partner.</p>
+        <p class="body-lg" style="margin-bottom:20px;">Shineflow Amazon Seller Analytics is a service-enabled analytics application and reporting workflow for authorized Amazon Selling Partners. We connect to your Amazon data through the Selling Partner API (SP-API), build the reports and dashboards that matter for your business, and pair them with the analysis and recommendations our team delivers as your operating partner.</p>
         <p class="body">More than software, Shineflow acts as a hands-on extension of your team — monitoring performance, spotting risks and opportunities early, and translating data into the next action. Shineflow only accesses Selling Partner data after you authorize our service, and reporting depends on your eligibility, authorization, and the SP-API roles approved by Amazon.</p>
       </div>
       <div class="overview-note">
@@ -831,7 +856,7 @@
       <div class="dash span-2">
         <div class="dash-bar">
           <span class="dash-dots"><i></i><i></i><i></i></span>
-          <span class="dash-url">analytics.shineflowseattle.com / sales-performance</span>
+          <span class="dash-url">Sample dashboard / sales performance</span>
           <span class="dash-tag">Sales Performance</span>
         </div>
         <div class="dash-body">
@@ -1022,6 +1047,22 @@
         </ul>
       </div>
     </div>
+
+    <div class="ba-caps">
+      <h3>Brand Analytics features &amp; insights</h3>
+      <ul>
+        <li>Amazon Search Terms Analysis</li>
+        <li>Market Basket Analysis</li>
+        <li>Repeat Purchase Analysis</li>
+        <li>Search query, keyword, and product discovery insights</li>
+        <li>Competitor and category-level demand signals, where available through authorized Brand Analytics data</li>
+        <li>Reporting and recommendations for eligible and authorized Amazon Selling Partners</li>
+      </ul>
+    </div>
+
+    <div class="ba-align">
+      <strong>Brand Analytics role alignment.</strong> These Brand Analytics services are designed to support the Brand Analytics role requested in our Solution Provider Profile. Shineflow uses authorized Brand Analytics datasets only to provide reporting, analysis, and recommendations to the Selling Partner that granted access. Brand Analytics data is made available only to eligible and authorized Selling Partners, and access is possible only after the Selling Partner authorizes Shineflow's service.
+    </div>
   </div>
 </section>
 
@@ -1107,7 +1148,7 @@
     <div class="section-head">
       <div class="eyebrow"><span class="dot"></span> Pricing</div>
       <h2 class="h-section" style="color:var(--cream); background:none; -webkit-background-clip:unset; background-clip:unset;">Transparent, Quote-Based Pricing</h2>
-      <p class="body-lg">Pricing depends on the number of marketplaces, ASIN count, reporting frequency, service scope, and level of strategic support.</p>
+      <p class="body-lg">Pricing depends on the number of marketplaces, ASIN count, reporting frequency, service scope, requested Brand Analytics scope, and level of strategic support. Starter and Growth plans list a starting monthly fee; Enterprise is quote-based.</p>
     </div>
     <div class="pricing-grid">
       <div class="pricing-card">
@@ -1124,6 +1165,7 @@
           <li>Monthly analytics report</li>
           <li>Sales &amp; traffic analysis</li>
           <li>Catalog health review</li>
+          <li>Brand Analytics review available as a custom add-on (where eligible &amp; authorized)</li>
           <li>Email support</li>
         </ul>
         <a href="#contact" class="btn btn-ghost pricing-cta">Request a Quote</a>
@@ -1141,7 +1183,7 @@
           <li>1–2 marketplaces</li>
           <li>Up to 200 ASINs</li>
           <li>Weekly reporting &amp; strategy</li>
-          <li>Brand Analytics insights (where available)</li>
+          <li>Brand Analytics insights included (where eligible &amp; authorized)</li>
           <li>Advertising performance review</li>
           <li>Dedicated account support</li>
         </ul>
@@ -1159,14 +1201,15 @@
           <li>Multi-marketplace support</li>
           <li>Custom ASIN scope</li>
           <li>Advanced analytics &amp; reporting</li>
-          <li>Full Brand Analytics suite (where available)</li>
+          <li>Full Brand Analytics suite included (where eligible &amp; authorized)</li>
           <li>Dedicated account management</li>
           <li>Custom integration support</li>
         </ul>
         <a href="#contact" class="btn btn-ghost pricing-cta">Contact Us</a>
       </div>
     </div>
-    <p class="pricing-note">Sample pricing scenarios. Custom pricing may apply depending on marketplace count, catalog size, advertising scope, reporting needs, and integration complexity. All prices in USD.</p>
+    <p class="pricing-note" style="margin-top:28px;"><strong style="color:var(--accent-2); font-weight:700;">Brand Analytics access</strong> is included in Growth Analytics and Enterprise plans where the Selling Partner is eligible and has authorized access. For Starter Analytics, Brand Analytics review may be added as a custom scope when available.</p>
+    <p class="pricing-note" style="margin-top:14px;">Sample pricing scenarios shown. Starter and Growth list a starting monthly fee; Enterprise is quote-based. Custom service scope and pricing may vary based on marketplace count, catalog size, reporting frequency, advertising scope, requested Brand Analytics scope, and integration complexity. Final pricing is confirmed by quote. All prices in USD. <a href="#contact" style="color:var(--accent-2);">Request a quote →</a></p>
   </div>
 </section>
 
@@ -1185,8 +1228,10 @@
           <li>Access Selling Partner data only after explicit authorization from the Selling Partner</li>
           <li>Use data solely to provide analytics, reporting, and marketplace management services to the authorizing Selling Partner</li>
           <li>Deliver reports and recommendations only to the Selling Partner that authorized access</li>
+          <li>Use Brand Analytics data only for eligible and authorized Selling Partners</li>
           <li>Maintain administrative, technical, and organizational safeguards to protect Selling Partner data</li>
           <li>Limit data access to the scope authorized by the Selling Partner and approved by Amazon</li>
+          <li>Honor Selling Partner requests to revoke access or delete their data</li>
         </ul>
       </div>
       <div class="data-card" style="background:var(--paper); border-color:rgba(16,16,16,.1);">
@@ -1219,7 +1264,7 @@
           <div class="contact-row"><span class="lbl">Address</span><span class="val">600 1st Ave Ste 102<br/>Seattle, WA 98104</span></div>
           <div class="contact-row"><span class="lbl">Email</span><span class="val"><a href="mailto:info@shineflowseattle.com">info@shineflowseattle.com</a></span></div>
           <div class="contact-row"><span class="lbl">Website</span><span class="val"><a href="https://www.shineflowseattle.com">shineflowseattle.com</a></span></div>
-          <div class="contact-row"><span class="lbl">Privacy</span><span class="val"><a href="https://www.shineflowseattle.com/privacy-policy">Privacy Policy</a></span></div>
+          <div class="contact-row"><span class="lbl">Privacy</span><span class="val"><a href="/privacy.html">Privacy Policy</a></span></div>
         </div>
         <p class="body">Shineflow works with authorized Amazon Selling Partners to provide analytics, reporting, and marketplace management services. Contact us to learn how we can support your Amazon business.</p>
       </div>
@@ -1253,7 +1298,7 @@
             <textarea id="message" name="message" placeholder="Tell us about your Amazon business — marketplaces, ASIN count, key goals..."></textarea>
           </div>
           <button type="submit" class="form-submit">Send Inquiry →</button>
-          <p class="form-disclaimer">By submitting, you agree to our <a href="https://www.shineflowseattle.com/privacy-policy">Privacy Policy</a>. We will only use your information to respond to your inquiry.</p>
+          <p class="form-disclaimer">By submitting, you agree to our <a href="/privacy.html">Privacy Policy</a>. We will only use your information to respond to your inquiry.</p>
         </form>
       </div>
     </div>
@@ -1267,7 +1312,7 @@
     <div class="footer-links">
       <a href="https://www.shineflowseattle.com">Home</a>
       <a href="#dashboards">Dashboards</a>
-      <a href="https://www.shineflowseattle.com/privacy-policy">Privacy Policy</a>
+      <a href="/privacy.html">Privacy Policy</a>
       <a href="#contact">Contact</a>
     </div>
     <p style="font-size:13px; color:var(--muted-dark);">600 1st Ave Ste 102, Seattle, WA 98104 · © 2026 Shineflow. All rights reserved.</p>

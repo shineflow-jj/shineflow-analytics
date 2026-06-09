@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Shineflow Amazon Seller Analytics</title>
+  <meta name="description" content="Shineflow privacy policy covering Amazon Selling Partner data, SP-API authorization, data use, retention and deletion, and security safeguards." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#101010" />
+  <link rel="canonical" href="https://service.shineflowseattle.com/privacy.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:#101010; --ink-2:#1a1a1a;
+      --line:rgba(246,242,235,.12); --line-strong:rgba(246,242,235,.24);
+      --cream:#f6f2eb; --muted-dark:#9a9690; --accent:#ff7a1a; --accent-2:#ff9a4d;
+      --gutter:clamp(20px,4vw,56px); --max:820px;
+    }
+    html { scroll-behavior:smooth; }
+    body {
+      background:var(--ink); color:var(--cream);
+      font-family:'Pretendard',system-ui,-apple-system,sans-serif;
+      -webkit-font-smoothing:antialiased; line-height:1.65; overflow-x:hidden;
+    }
+    a { color:var(--accent-2); text-decoration:none; }
+    a:hover { color:var(--accent); }
+    img { display:block; }
+
+    .header {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:18px var(--gutter);
+      border-bottom:1px solid var(--line);
+      position:sticky; top:0; background:rgba(16,16,16,.85);
+      backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); z-index:10;
+    }
+    .logo-img { height:22px; width:auto; filter:brightness(0) invert(1); }
+    .back { font-size:14px; color:rgba(246,242,235,.65); }
+    .back:hover { color:var(--cream); }
+
+    main { max-width:var(--max); margin:0 auto; padding:clamp(48px,8vw,88px) var(--gutter); }
+    .eyebrow {
+      font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+      color:var(--muted-dark); font-weight:500; display:flex; align-items:center; gap:10px; margin-bottom:16px;
+    }
+    .eyebrow .dot { width:6px; height:6px; border-radius:50%; background:var(--accent); box-shadow:0 0 12px rgba(255,122,26,.55); }
+    h1 { font-size:clamp(32px,5vw,48px); font-weight:800; letter-spacing:-.02em; line-height:1.08; margin-bottom:14px; }
+    .updated { font-size:13px; color:var(--muted-dark); margin-bottom:40px; }
+    h2 {
+      font-size:20px; font-weight:700; letter-spacing:-.01em;
+      margin:40px 0 12px; color:var(--cream);
+      padding-top:24px; border-top:1px solid var(--line);
+    }
+    h2:first-of-type { border-top:none; padding-top:0; }
+    p, li { font-size:15px; color:rgba(246,242,235,.74); margin-bottom:12px; }
+    ul { list-style:none; margin:6px 0 14px; }
+    ul li { padding-left:18px; position:relative; }
+    ul li::before { content:"›"; position:absolute; left:0; color:var(--accent); font-weight:700; }
+    strong { color:var(--cream); font-weight:600; }
+    .callout {
+      background:rgba(255,122,26,.07); border:1px solid rgba(255,122,26,.25);
+      border-left:2px solid var(--accent); border-radius:12px; padding:18px 22px; margin:18px 0;
+    }
+    .callout p { margin:0; color:rgba(246,242,235,.8); }
+
+    footer { border-top:1px solid var(--line); padding:32px var(--gutter); }
+    .footer-inner { max-width:var(--max); margin:0 auto; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; align-items:center; }
+    .footer-inner p { font-size:12px; color:var(--muted-dark); margin:0; }
+    .disclaimer { max-width:var(--max); margin:18px auto 0; font-size:11px; color:rgba(246,242,235,.3); line-height:1.7; }
+
+    @media (max-width:600px) { .header { padding:16px 20px; } .logo-img { height:18px; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="/" aria-label="Shineflow"><img class="logo-img" src="/logo.png" alt="Shineflow" width="534" height="64" /></a>
+    <a href="/" class="back">← Back to home</a>
+  </header>
+
+  <main>
+    <div class="eyebrow"><span class="dot"></span> Legal</div>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: June 9, 2026</p>
+
+    <p>This Privacy Policy explains how Shineflow ("Shineflow", "we", "us") collects, uses, protects, and retains information in connection with <strong>Shineflow Amazon Seller Analytics</strong>, our service-enabled analytics application and reporting workflow for authorized Amazon Selling Partners. It applies to data accessed through the Amazon Selling Partner API (SP-API), including Amazon Brand Analytics data where the Selling Partner is eligible and has authorized access.</p>
+
+    <h2>Amazon Selling Partner data</h2>
+    <p>When you authorize Shineflow, we may access and process information from your Amazon Selling Partner account through SP-API, which may include sales and traffic reports, order and inventory data, catalog and listing data, advertising performance, and — where you are eligible and have authorized it — Amazon Brand Analytics datasets (such as search terms, market basket, and repeat purchase data).</p>
+
+    <h2>SP-API data authorization</h2>
+    <p>Shineflow accesses Selling Partner data <strong>only after you explicitly authorize</strong> our application or service, and only within the SP-API roles approved by Amazon and the scope you grant. We do not access any Selling Partner account data without prior authorization from the Selling Partner. Brand Analytics data is accessed only for eligible and authorized Selling Partners.</p>
+
+    <h2>How we use data</h2>
+    <p>We use authorized data <strong>solely to provide the requested services</strong> to you — analytics, reporting, dashboards, analysis, and recommendations — and to operate, maintain, and support those services. We do not use your data for any purpose unrelated to providing services to the authorizing Selling Partner.</p>
+    <ul>
+      <li>Generate reports, dashboards, and business reviews from your authorized data</li>
+      <li>Provide analysis and recommendations to support your marketplace decisions</li>
+      <li>Deliver outputs only to the Selling Partner that authorized access</li>
+    </ul>
+
+    <h2>No selling or resale of seller data</h2>
+    <p>Shineflow <strong>does not sell, license, or resell</strong> Amazon Selling Partner data to any third party. We do not aggregate Selling Partner data across customers for resale or disclosure to other parties.</p>
+
+    <h2>No sharing between sellers</h2>
+    <p>We <strong>do not share one Selling Partner's data with another Selling Partner</strong>. Each Selling Partner's data is segregated and used only to serve that Selling Partner.</p>
+
+    <h2>Data retention and deletion</h2>
+    <p>We retain authorized data only as long as needed to provide the services or as required by law. You may request deletion of your data or revoke Shineflow's access at any time. Upon a verified deletion request or termination of service, we delete or de-identify your Selling Partner data within a commercially reasonable period, except where retention is required by law.</p>
+
+    <h2>Security safeguards</h2>
+    <p>We maintain administrative, technical, and organizational safeguards designed to protect Selling Partner data against unauthorized access, use, alteration, or disclosure. Access is limited to the scope you authorize and to personnel who need it to deliver the service.</p>
+
+    <h2>Contact for deletion and access requests</h2>
+    <div class="callout">
+      <p>To request access removal, data deletion, or to ask any privacy question, contact us at <a href="mailto:info@shineflowseattle.com">info@shineflowseattle.com</a>. Mailing address: Shineflow, 600 1st Ave Ste 102, Seattle, WA 98104, USA.</p>
+    </div>
+
+    <h2>Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time. Material changes will be reflected by updating the "Last updated" date above.</p>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© 2026 Shineflow. All rights reserved.</p>
+      <p><a href="/">Home</a> · <a href="/#contact">Contact</a></p>
+    </div>
+    <p class="disclaimer">Shineflow is an independent service provider. Shineflow is not endorsed, certified, or approved by Amazon. Amazon, Amazon Selling Partner API (SP-API), and Amazon Brand Analytics are trademarks of Amazon.com, Inc. or its affiliates. Use of these names is for descriptive purposes only.</p>
+  </footer>
+</body>
+</html>
