@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy &amp; Terms | Shineflow Amazon Seller Analytics</title>
-  <meta name="description" content="Shineflow Privacy Policy and Terms of Service covering Amazon Selling Partner data, SP-API and Brand Analytics data authorization, data use, sharing, retention and deletion, and security controls." />
+  <meta name="description" content="Shineflow Privacy Policy and Terms of Service covering Amazon Seller Central and SP-API data, Brand Analytics and AWD data authorization, data use, sharing, retention and deletion, security controls, and incident response." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#101010" />
   <link rel="canonical" href="https://service.shineflowseattle.com/privacy.html" />
@@ -57,7 +57,6 @@
       padding-top:24px; border-top:1px solid var(--line);
     }
     h2:first-of-type { border-top:none; padding-top:0; }
-    h3 { font-size:15px; font-weight:700; color:var(--cream); margin:22px 0 8px; }
     p, li { font-size:15px; color:rgba(246,242,235,.74); margin-bottom:12px; }
     ul { list-style:none; margin:6px 0 14px; }
     ul li { padding-left:18px; position:relative; }
@@ -71,7 +70,9 @@
       background:rgba(255,122,26,.07); border:1px solid rgba(255,122,26,.25);
       border-left:2px solid var(--accent); border-radius:12px; padding:18px 22px; margin:18px 0;
     }
-    .callout p { margin:0; color:rgba(246,242,235,.8); }
+    .callout p { margin:0 0 4px; color:rgba(246,242,235,.8); }
+    .callout p:last-child { margin:0; }
+    .addr { font-style:normal; color:rgba(246,242,235,.8); }
 
     footer { border-top:1px solid var(--line); padding:32px var(--gutter); }
     .footer-inner { max-width:var(--max); margin:0 auto; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; align-items:center; }
@@ -92,97 +93,200 @@
     <h1>Privacy Policy &amp; Terms</h1>
     <p class="updated">Last updated: June 9, 2026</p>
 
-    <p>This document explains how Shineflow ("Shineflow", "we", "us") collects, uses, protects, and retains information in connection with <strong>Shineflow Amazon Seller Analytics</strong>, our service-enabled analytics application and reporting workflow for authorized Amazon Selling Partners ("clients"). It also sets out the terms that govern use of our Services. It covers data accessed through the Amazon Selling Partner API (SP-API), including Amazon Brand Analytics data where the client is eligible and has authorized access. We handle all such data in accordance with applicable laws and Amazon policies.</p>
+    <p>This Privacy Policy &amp; Terms document explains how Shineflow ("Shineflow", "we", "us", or "our") collects, uses, protects, shares, and retains information in connection with <strong>Shineflow Amazon Seller Analytics</strong>, our service-enabled analytics application and reporting workflow for authorized Amazon Selling Partners ("clients", "Selling Partners", or "you").</p>
+    <p>This document also sets out the terms that govern use of our services. It covers data accessed through Amazon Seller Central and the Amazon Selling Partner API, also known as SP-API, including Amazon Brand Analytics data where the client is eligible and has authorized access.</p>
+    <p>Shineflow handles Amazon Selling Partner data in accordance with applicable laws, contractual obligations, and applicable Amazon policies.</p>
 
-    <!-- ═══════════════ PRIVACY POLICY ═══════════════ -->
+    <!-- ═══════════════ PART 1 — PRIVACY POLICY ═══════════════ -->
     <p class="section-tag">Part 1 — Privacy Policy</p>
 
-    <h2>Information from Amazon Seller Central and SP-API (client-authorized)</h2>
-    <p>When you authorize Shineflow, we may access and process the following information from your Amazon Selling Partner account through Seller Central and SP-API, within the SP-API roles approved by Amazon and the scope you grant:</p>
+    <h2>1. Information from Amazon Seller Central and SP-API</h2>
+    <p>When you authorize Shineflow, we may access and process Amazon Selling Partner data from your Amazon account through Seller Central and SP-API, within the SP-API roles approved by Amazon and the scope you grant.</p>
+    <p>This may include:</p>
     <ul>
-      <li>Amazon Selling Partner account and catalog data</li>
-      <li>Advertising and performance data</li>
-      <li>Brand Analytics data, where available to eligible and authorized Selling Partners</li>
-      <li>Search terms, market basket, repeat purchase, and other Brand Analytics reports where authorized</li>
-      <li>Order and customer service data only as needed for operations</li>
+      <li>Amazon Selling Partner account and marketplace participation data</li>
+      <li>Catalog, listing, product content, variation, and A+ content data</li>
+      <li>Pricing, offer, buy box, promotion, sales, traffic, and marketplace performance data available through approved SP-API roles</li>
+      <li>Inventory, order metrics, FBA fulfillment, inbound shipment, shipment status, replenishment, and stock planning data</li>
+      <li>Finance, settlement, fee, reimbursement, transaction, and profitability-related data available through approved SP-API roles</li>
+      <li>Brand Analytics data, where available to eligible and authorized Selling Partners, including Amazon Search Terms, Market Basket Analysis, Repeat Purchase, Promotion Performance, and related Brand Analytics reports</li>
+      <li>Amazon Warehousing and Distribution data, where applicable, including AWD inventory summaries, inbound shipment status, shipment details, and reconciliation information for authorized Selling Partners using AWD</li>
     </ul>
-    <p>Order and customer service data may include buyer personal information. We access such information only as needed to operate the authorized Services, use it only for that purpose, do not use it for marketing, and handle it in accordance with applicable laws and Amazon policies.</p>
+    <p>Shineflow accesses Amazon Selling Partner data only after authorization by the Selling Partner and only within the roles and permissions approved by Amazon and granted by the authorizing Selling Partner.</p>
+    <p>Shineflow does not request or use Amazon buyer personal information for marketing purposes. Our services are designed to support marketplace operations, analytics, reporting, and account management for the authorizing Selling Partner.</p>
 
-    <h3>Information you provide directly</h3>
-    <p>When you contact us or request a quote, we collect the information you submit (such as name, company, and email) to respond to your inquiry and provide the Services.</p>
-
-    <h2>How We Use Information</h2>
-    <p>We use authorized data <strong>solely to provide the requested Services</strong> to the authorizing client, and to operate, maintain, and support those Services. In particular, we use information to:</p>
+    <h2>2. Information You Provide Directly</h2>
+    <p>When you contact Shineflow, request a quote, submit a form, communicate with our team, or enter into a service agreement, we may collect information you provide directly, including:</p>
     <ul>
-      <li>Provide analytics, reporting, and recommendations to the authorizing Selling Partner</li>
-      <li>Deliver Brand Analytics-related insights where the Selling Partner is eligible and has authorized access</li>
-      <li>Operate service-enabled analytics workflows connected to authorized Amazon data</li>
-      <li>Generate dashboards, exports, and business reviews from your authorized data</li>
+      <li>Name</li>
+      <li>Company name</li>
+      <li>Email address</li>
+      <li>Phone number</li>
+      <li>Job title</li>
+      <li>Marketplace information</li>
+      <li>Catalog size or ASIN count</li>
+      <li>Business inquiry details</li>
+      <li>Messages or documents you choose to provide</li>
     </ul>
-    <p>We do not use your data for any purpose unrelated to providing Services to the authorizing client.</p>
+    <p>We use this information to respond to inquiries, prepare quotes, provide services, communicate with you, and manage our business relationship.</p>
 
-    <h2>How We Share Information</h2>
-    <p>We deliver reports, analysis, and recommendations only to the Selling Partner that authorized access. Regarding sharing:</p>
+    <h2>3. How We Use Information</h2>
+    <p>Shineflow uses authorized Amazon Selling Partner data only to provide services to the authorizing Selling Partner and to operate, maintain, and support those services.</p>
+    <p>We may use information to:</p>
     <ul>
-      <li>We do not sell or resell Selling Partner data.</li>
-      <li>We do not share one Selling Partner's data with another Selling Partner.</li>
-      <li>We do not use Selling Partner data to provide services to another seller, except in aggregated or de-identified form where permitted by applicable law, contract, and Amazon policies.</li>
+      <li>Provide marketplace analytics, reporting, dashboards, exports, and business reviews</li>
+      <li>Monitor sales, traffic, and marketplace performance</li>
+      <li>Support catalog, listing, content, variation, and A+ content review</li>
+      <li>Review pricing, offer, buy box, fee, and promotion performance</li>
+      <li>Monitor FBA inventory, shipment status, replenishment needs, and fulfillment-related issues</li>
+      <li>Analyze inventory levels, sales velocity, order metrics, and stockout risks</li>
+      <li>Review settlement, fee, reimbursement, transaction, and profitability-related data</li>
+      <li>Provide Brand Analytics insights for eligible and authorized Selling Partners, including Search Terms, Market Basket Analysis, Repeat Purchase, and related reports</li>
+      <li>Monitor Amazon Warehousing and Distribution inventory and shipment information where applicable</li>
+      <li>Detect anomalies, operational issues, data gaps, and performance changes</li>
+      <li>Provide recommendations and account management support to the authorizing Selling Partner</li>
+      <li>Maintain security, troubleshoot technical issues, and support authorized workflows</li>
     </ul>
-    <p>We may share data with service providers who process it on our behalf to deliver the Services, under confidentiality and data-protection obligations, and where required by law.</p>
+    <p>We do not use Amazon Selling Partner data for any purpose unrelated to providing services to the authorizing Selling Partner.</p>
 
-    <h2>Data Retention</h2>
+    <h2>4. How We Share Information</h2>
+    <p>We deliver reports, analysis, dashboards, exports, and recommendations only to the Selling Partner that authorized access.</p>
+    <p>Shineflow does not:</p>
     <ul>
-      <li>Selling Partner data accessed through Amazon systems or SP-API is retained only as long as necessary to provide the authorized Services, meet legal or contractual obligations, resolve disputes, or maintain security records.</li>
-      <li>Clients may request deletion of their data or removal of access by contacting <a href="mailto:jj@shineflowseattle.com">jj@shineflowseattle.com</a>.</li>
-      <li>Upon termination of services, Amazon account permissions should be revoked or removed, and Shineflow will delete or de-identify retained client Amazon data where feasible and legally permitted.</li>
+      <li>Sell or resell Amazon Selling Partner data</li>
+      <li>Share one Selling Partner's data with another Selling Partner</li>
+      <li>Use one Selling Partner's data to provide services to another Selling Partner</li>
+      <li>Aggregate Selling Partner data across customers for resale or disclosure</li>
+      <li>Publish insights about Amazon's business or another Selling Partner's business</li>
+      <li>Use Amazon Selling Partner data for unrelated marketing purposes</li>
+      <li>Share Amazon Information with outside parties, except where required by law or with the client's express authorization</li>
     </ul>
+    <p>If Shineflow uses a third-party service provider to process non-Amazon contact or inquiry information, such as quote requests submitted through our website, that provider is required to process such information under confidentiality and data-protection obligations. Shineflow does not authorize such providers to sell the information or use it for their own marketing purposes.</p>
 
-    <h2>Security Controls</h2>
-    <p>We maintain administrative, technical, and organizational safeguards designed to protect Selling Partner data against unauthorized access, use, alteration, or disclosure, including:</p>
+    <h2>5. Data Retention</h2>
+    <p>Shineflow retains Amazon Selling Partner data only as long as necessary to provide the authorized services, meet legal or contractual obligations, resolve disputes, maintain security records, or support audit and compliance requirements.</p>
+    <p>Clients may request deletion of their data or removal of access by contacting <a href="mailto:jj@shineflowseattle.com">jj@shineflowseattle.com</a>.</p>
+    <p>Upon termination of services, the client should revoke or remove Shineflow's Amazon account permissions. Shineflow will delete or de-identify retained client Amazon data where feasible and legally permitted.</p>
+    <p>Where deletion is not immediately feasible due to legal, security, backup, audit, or technical requirements, Shineflow will restrict further processing and delete or de-identify the data when retention is no longer required.</p>
+
+    <h2>6. Security Controls</h2>
+    <p>Shineflow maintains administrative, technical, and organizational safeguards designed to protect Amazon Selling Partner data against unauthorized access, use, alteration, disclosure, or loss.</p>
+    <p>These safeguards may include:</p>
     <ul>
-      <li>Access to Amazon Selling Partner data and SP-API data is limited to authorized personnel with a business need.</li>
-      <li>We use least-privilege access practices and request only the Amazon roles needed for service delivery.</li>
-      <li>Where available, we use MFA, access controls, and secure credential handling.</li>
+      <li>Limiting access to Amazon Selling Partner data to authorized personnel with a business need</li>
+      <li>Applying least-privilege access practices</li>
+      <li>Using role-based access controls where available</li>
+      <li>Using multi-factor authentication where available</li>
+      <li>Protecting data in transit using HTTPS, TLS, or other secure transmission methods where applicable</li>
+      <li>Handling credentials, tokens, and secret keys securely</li>
+      <li>Avoiding hard-coding credentials or secret keys into public repositories or application code</li>
+      <li>Reviewing access periodically and removing access when no longer needed</li>
+      <li>Maintaining internal security procedures for authorized personnel</li>
+      <li>Monitoring and investigating suspected unauthorized access or security events</li>
     </ul>
+    <p>Shineflow requests only the Amazon roles needed to deliver the authorized services.</p>
 
-    <h2>Your Choices and Rights</h2>
+    <h2>7. Security Incident Response</h2>
+    <p>Shineflow maintains an internal incident response plan for security events involving Amazon Selling Partner data and other protected business information.</p>
+    <p>The plan defines internal roles and responsibilities, escalation procedures, investigation steps, containment and recovery actions, evidence preservation, customer communication procedures, and post-incident review requirements.</p>
+    <p>Shineflow reviews and verifies its incident response plan at least every six months and updates the plan after major infrastructure changes, significant system changes, or lessons learned from security events.</p>
+    <p>If Shineflow detects a security incident involving Amazon Information, Shineflow will investigate the incident, take appropriate containment and remediation actions, preserve relevant evidence, and notify Amazon in accordance with Amazon's applicable data protection and incident reporting requirements.</p>
+
+    <h2>8. Your Choices and Rights</h2>
+    <p>Clients may request:</p>
     <ul>
-      <li>Clients may request access review, correction, deletion, or removal of Amazon data access.</li>
-      <li>Clients can revoke Amazon authorization through their Amazon account or by contacting Shineflow for assistance.</li>
+      <li>Review of data access</li>
+      <li>Correction of client-provided information</li>
+      <li>Deletion of retained Amazon Selling Partner data where feasible and legally permitted</li>
+      <li>Removal of Amazon data access</li>
+      <li>Assistance with revoking Amazon authorization</li>
+      <li>Clarification regarding how their data is used</li>
     </ul>
+    <p>Clients can revoke Shineflow's Amazon authorization through their Amazon account or contact Shineflow for assistance.</p>
 
-    <h2>Contact for deletion and access requests</h2>
+    <h2>9. Contact for Privacy, Access, and Deletion Requests</h2>
     <div class="callout">
-      <p>To request access review, data deletion, or removal of Amazon data access, or to ask any privacy question, contact us at <a href="mailto:jj@shineflowseattle.com">jj@shineflowseattle.com</a> (general inquiries: <a href="mailto:info@shineflowseattle.com">info@shineflowseattle.com</a>). Mailing address: Shineflow, 600 1st Ave Ste 102, Seattle, WA 98104, USA.</p>
+      <p>To request access review, data deletion, removal of Amazon data access, or to ask any privacy-related question, contact us at <a href="mailto:jj@shineflowseattle.com">jj@shineflowseattle.com</a>.</p>
+      <p>General inquiries: <a href="mailto:info@shineflowseattle.com">info@shineflowseattle.com</a></p>
+      <p class="addr">Mailing address: Shineflow, 600 1st Ave Ste 102, Seattle, WA 98104, USA</p>
     </div>
 
-    <h2>Changes to this policy</h2>
-    <p>We may update this document from time to time. Material changes will be reflected by updating the "Last updated" date above.</p>
+    <h2>10. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy &amp; Terms document from time to time. Material changes will be reflected by updating the "Last updated" date above.</p>
 
-    <!-- ═══════════════ TERMS OF SERVICE ═══════════════ -->
+    <!-- ═══════════════ PART 2 — TERMS OF SERVICE ═══════════════ -->
     <p class="section-tag">Part 2 — Terms of Service</p>
 
-    <h2>Services</h2>
-    <p>Shineflow Amazon Seller Analytics provides analytics, reporting, dashboards, analysis, and recommendations to authorized Amazon Selling Partners. The specific scope of Services for each client is set out in the applicable order or agreement, and may vary based on marketplace count, catalog size, reporting frequency, and requested Brand Analytics scope.</p>
-
-    <h2>Amazon Account Access and Authorization</h2>
+    <h2>1. Services</h2>
+    <p>Shineflow Amazon Seller Analytics provides analytics, reporting, dashboards, analysis, recommendations, and managed marketplace operations support to authorized Amazon Selling Partners.</p>
+    <p>The specific scope of services for each client is set out in the applicable quote, order, statement of work, service agreement, or other written agreement between the client and Shineflow.</p>
+    <p>Service scope may vary based on factors such as:</p>
     <ul>
-      <li>Shineflow may access Amazon data, including SP-API and Brand Analytics data, only after the client authorizes access.</li>
-      <li>The client remains responsible for maintaining appropriate Amazon account permissions.</li>
-      <li>Shineflow will use authorized Amazon data only to perform the agreed Services for that client.</li>
+      <li>Marketplace count</li>
+      <li>Catalog size</li>
+      <li>ASIN count</li>
+      <li>Reporting frequency</li>
+      <li>Operational support requirements</li>
+      <li>Brand Analytics availability</li>
+      <li>Amazon Warehousing and Distribution usage</li>
+      <li>Custom dashboard or reporting requirements</li>
+      <li>Account management scope</li>
     </ul>
 
-    <h2>Data Protection</h2>
-    <p>Shineflow processes authorized Amazon data in accordance with applicable laws and Amazon policies, applies the security controls described in the Privacy Policy above, does not sell or resell Selling Partner data, and does not share one client's data with another client. Data retention and deletion are handled as described in the Data Retention section above.</p>
+    <h2>2. Amazon Account Access and Authorization</h2>
+    <p>Shineflow may access Amazon data, including SP-API and Brand Analytics data, only after the client authorizes access.</p>
+    <p>The client remains responsible for maintaining appropriate Amazon account permissions and ensuring that Shineflow is authorized only for the services requested by the client.</p>
+    <p>Shineflow will use authorized Amazon data only to perform the agreed services for that client.</p>
+    <p>Services may depend on:</p>
+    <ul>
+      <li>The client's Amazon account status</li>
+      <li>The client's eligibility for specific Amazon reports or datasets</li>
+      <li>The SP-API roles approved by Amazon</li>
+      <li>The permissions granted by the client</li>
+      <li>The availability and accuracy of data from Amazon systems</li>
+    </ul>
 
-    <h2>Fees</h2>
-    <p>Fees for the Services are quote-based and confirmed in the applicable order or agreement. Published plan prices are starting points and may vary with scope.</p>
+    <h2>3. Client Responsibilities</h2>
+    <p>The client is responsible for:</p>
+    <ul>
+      <li>Providing accurate information to Shineflow</li>
+      <li>Maintaining appropriate Amazon account access and permissions</li>
+      <li>Reviewing reports, dashboards, recommendations, and deliverables</li>
+      <li>Making its own business, pricing, inventory, advertising, operational, and financial decisions</li>
+      <li>Complying with Amazon policies and applicable laws</li>
+      <li>Promptly notifying Shineflow of any changes that may affect authorized access or service delivery</li>
+    </ul>
 
-    <h2>Disclaimers</h2>
-    <p>Shineflow is an independent service provider and is not endorsed, certified, or approved by Amazon. Services depend on the client's eligibility, authorization, and the SP-API roles approved by Amazon, and on the availability of the relevant data. Insights and recommendations are provided for informational purposes; the client is responsible for its own business decisions.</p>
+    <h2>4. Data Protection</h2>
+    <p>Shineflow processes authorized Amazon Selling Partner data in accordance with applicable laws, contractual obligations, and applicable Amazon policies.</p>
+    <p>Shineflow applies the security controls described in the Privacy Policy above, does not sell or resell Amazon Selling Partner data, and does not share one client's Amazon Selling Partner data with another client.</p>
+    <p>Data retention and deletion are handled as described in the Data Retention section above.</p>
 
-    <h2>Contact</h2>
-    <p>Questions about these Terms can be sent to <a href="mailto:info@shineflowseattle.com">info@shineflowseattle.com</a>, Shineflow, 600 1st Ave Ste 102, Seattle, WA 98104, USA.</p>
+    <h2>5. Fees</h2>
+    <p>Fees for Shineflow services are quote-based and confirmed in the applicable quote, order, service agreement, or statement of work.</p>
+    <p>Published plan prices, if any, are starting points and may vary based on scope, marketplace complexity, catalog size, reporting frequency, account management needs, technical requirements, and additional service requirements.</p>
+
+    <h2>6. Availability of Services</h2>
+    <p>Shineflow's services may depend on Amazon system availability, client authorization, Amazon approval of applicable roles, API availability, marketplace-specific data availability, and the client's eligibility for certain reports or datasets.</p>
+    <p>Shineflow does not guarantee uninterrupted availability of Amazon systems, SP-API, Seller Central, Brand Analytics, Amazon Warehousing and Distribution data, or any other third-party system.</p>
+
+    <h2>7. Insights and Recommendations</h2>
+    <p>Shineflow provides analytics, insights, recommendations, and reports for informational and operational support purposes.</p>
+    <p>The client remains responsible for reviewing all recommendations and making its own business decisions. Shineflow does not guarantee specific sales results, ranking improvements, advertising results, profitability, or marketplace outcomes.</p>
+
+    <h2>8. Independent Service Provider</h2>
+    <p>Shineflow is an independent service provider and is not endorsed by Amazon.</p>
+    <p>Amazon's approval of SP-API roles, solution provider status, or related access does not constitute an endorsement, certification, or guarantee of Shineflow's services.</p>
+    <p>Amazon, Amazon Seller Central, Amazon Brand Analytics, Selling Partner API, SP-API, and Amazon Warehousing and Distribution are trademarks, services, or programs of Amazon.com, Inc. or its affiliates.</p>
+
+    <h2>9. Changes to Services or Terms</h2>
+    <p>Shineflow may update its services, workflows, documentation, pricing, or these Terms from time to time. Material changes to this document will be reflected by updating the "Last updated" date above.</p>
+
+    <h2>10. Contact</h2>
+    <div class="callout">
+      <p>Questions about these Terms can be sent to <a href="mailto:info@shineflowseattle.com">info@shineflowseattle.com</a>.</p>
+      <p class="addr">Mailing address: Shineflow, 600 1st Ave Ste 102, Seattle, WA 98104, USA</p>
+    </div>
   </main>
 
   <footer>
@@ -190,7 +294,7 @@
       <p>© 2026 Shineflow. All rights reserved.</p>
       <p><a href="/">Home</a> · <a href="/#contact">Contact</a></p>
     </div>
-    <p class="disclaimer">Shineflow is an independent service provider. Shineflow is not endorsed, certified, or approved by Amazon. Amazon, Amazon Selling Partner API (SP-API), and Amazon Brand Analytics are trademarks of Amazon.com, Inc. or its affiliates. Use of these names is for descriptive purposes only.</p>
+    <p class="disclaimer">Shineflow is an independent service provider. Shineflow is not endorsed, certified, or approved by Amazon. Amazon, Amazon Seller Central, Amazon Selling Partner API (SP-API), Amazon Brand Analytics, and Amazon Warehousing and Distribution are trademarks of Amazon.com, Inc. or its affiliates. Use of these names is for descriptive purposes only.</p>
   </footer>
 </body>
 </html>
